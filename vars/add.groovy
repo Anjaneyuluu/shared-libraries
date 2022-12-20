@@ -1,6 +1,3 @@
-def examFun(List<String> val){
-  return [
-     new randClass(name: val[0], place: 'London')
-     new randClass(name: val[1], place: 'Berlin')
-  ]
-}
+def x = 10
+def y = 20
+print'sum of x + y =' + (x+y)
