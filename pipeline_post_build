@@ -1,0 +1,39 @@
+pipeline {
+      agent any
+      environment {
+          
+          env1 = "dev"
+          env2 = "test"
+          env3 = "prod"
+        }
+
+      stages {
+         stage('dev') {
+             when {environment name:'env1', value: 'dev' }
+             steps{
+                 echo 'Hellow dev team'
+                 build 'selunium-test'
+                }
+             
+             
+            }
+             
+        
+                
+               stage('test'){
+                   when {environment name:'env2', value: 'test' }
+                   steps{
+                       echo 'Hello test tesm'
+                    }
+                }   
+                   
+                   stage("prod") {
+                       when {environment name:'env3', value: 'prod' }
+                       steps{
+                           echo 'Hello prod team'
+                        }
+                    }
+               
+            
+        }
+    }
